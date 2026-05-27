@@ -9,11 +9,13 @@ const LS_THEME = "etsy_dashboard_theme";
 const LS_PALETTE = "etsy_dashboard_palette";
 const LS_FONT = "etsy_dashboard_font";
 
+const DEFAULT_SHEET_URL = "https://docs.google.com/spreadsheets/d/1ysZPOFHIwNATn8rrUwiy9Y-G3-nbDwcUxMxoMUXTTys/edit?gid=728848446";
+
 function App() {
   const [orders, setOrders] = useState(window.SNAPSHOT_ORDERS);
   const [source, setSource] = useState("snapshot"); // "snapshot" | "sheet"
   const [lastUpdated, setLastUpdated] = useState(null);
-  const [sheetUrl, setSheetUrl] = useState(() => localStorage.getItem(LS_SHEET_URL) || "");
+  const [sheetUrl, setSheetUrl] = useState(() => localStorage.getItem(LS_SHEET_URL) || DEFAULT_SHEET_URL);
   const [showSettings, setShowSettings] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
